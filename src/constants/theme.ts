@@ -7,24 +7,70 @@ import '@/global.css';
 
 import { Platform } from 'react-native';
 
-export const Colors = {
+const colors = {
   light: {
-    text: '#000000',
-    background: '#ffffff',
+    text: '#2C1810',
+    tint: "#C8843A",
+    background: "#FAF7F2",
+    foreground: "#2C1810",
+    card: "#FFFFFF",
+    cardForeground: "#2C1810",
+    primary: "#C8843A",
+    primaryForeground: "#FFFFFF",
+    secondary: "#F5EDD8",
+    secondaryForeground: "#2C1810",
+    muted: "#EDE5D4",
+    mutedForeground: "#9B8A72",
+    accent: "#E8B86D",
+    accentForeground: "#2C1810",
+    destructive: "#D94F3D",
+    destructiveForeground: "#FFFFFF",
+    border: "#E2D4BE",
+    input: "#E2D4BE",
+    success: "#4A9B6F",
+    successForeground: "#FFFFFF",
+    warning: "#D4822A",
+    warningForeground: "#FFFFFF",
+    surfaceElevated: "#FFFCF8",
+
     backgroundElement: '#F0F0F3',
     backgroundSelected: '#E0E1E6',
     textSecondary: '#60646C',
   },
   dark: {
     text: '#ffffff',
-    background: '#000000',
+    tint: "#C8843A",
+    background: "#FAF7F2",
+    foreground: "#2C1810",
+    card: "#FFFFFF",
+    cardForeground: "#2C1810",
+    primary: "#C8843A",
+    primaryForeground: "#FFFFFF",
+    secondary: "#F5EDD8",
+    secondaryForeground: "#2C1810",
+    muted: "#EDE5D4",
+    mutedForeground: "#9B8A72",
+    accent: "#E8B86D",
+    accentForeground: "#2C1810",
+    destructive: "#D94F3D",
+    destructiveForeground: "#FFFFFF",
+    border: "#E2D4BE",
+    input: "#E2D4BE",
+    success: "#4A9B6F",
+    successForeground: "#FFFFFF",
+    warning: "#D4822A",
+    warningForeground: "#FFFFFF",
+    surfaceElevated: "#FFFCF8",
+
     backgroundElement: '#212225',
     backgroundSelected: '#2E3135',
     textSecondary: '#B0B4BA',
   },
-} as const;
+} 
 
-export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
+export default colors;
+
+export type ThemeColor = keyof typeof colors.light & keyof typeof colors.dark
 
 export const Fonts = Platform.select({
   ios: {
