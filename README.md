@@ -61,9 +61,11 @@ Join our community of developers creating universal apps.
 - [x] I was try to put a color at Icon in "app-tabs"
 - [ ] construct components
    - [x] Badge
-   - [ ] EmptyState
-   - [ ] ErrorBoundary
-   - [ ] ErrorFallback
-   - [ ] KeyboardAware
-   - [ ] OrderCard
-   - [ ] StatCard
+   - [x] EmptyState
+   - [x] ErrorBoundary
+   - [x] ErrorFallback
+   - [x] KeyboardAware
+   - [x] OrderCard
+   - [x] StatCard
+
+Now it's time to test...
