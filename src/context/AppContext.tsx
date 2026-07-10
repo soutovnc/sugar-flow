@@ -201,16 +201,26 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     await AsyncStorage.setItem(INVENTORY_KEY, JSON.stringify(updated));
   }, [inventory]);
 
-  return (
-    <AppContext.Provider value={{
-      orders, products, inventory,
-      addOrder, updateOrderStatus, deleteOrder,
-      addProduct, updateProduct, toggleProductAvailability, deleteProduct,
-      updateInventoryQuantity, addInventoryItem,
-      isLoaded,
-    }}>
-      {children}
-    </AppContext.Provider>
+  return React.createElement(
+    AppContext.Provider,
+    {
+      value: {
+        orders,
+        products,
+        inventory,
+        addOrder,
+        updateOrderStatus,
+        deleteOrder,
+        addProduct,
+        updateProduct,
+        toggleProductAvailability,
+        deleteProduct,
+        updateInventoryQuantity,
+        addInventoryItem,
+        isLoaded,
+      },
+    },
+    children,
   );
 }
 
