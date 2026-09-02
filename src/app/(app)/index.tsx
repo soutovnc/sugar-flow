@@ -4,7 +4,7 @@ import { StatCard } from '@/components/StatCard';
 import { useApp } from '@/context/AppContext';
 import { useColors } from '@/hooks/useColors';
 import { Feather } from '@expo/vector-icons';
-import { router } from 'expo-router';
+import { type Href, router } from 'expo-router';
 import React, { useMemo } from 'react';
 import {
   Platform,
@@ -112,6 +112,18 @@ export default function DashboardScreen() {
           <Feather name="trending-up" size={32} color="rgba(255,255,255,0.4)" />
         </View>
       </View>
+
+      <TouchableOpacity
+        style={[styles.billingLink, { backgroundColor: colors.card, borderColor: colors.border }]}
+        onPress={() => router.push('/billing' as Href)}
+        activeOpacity={0.7}
+      >
+        <View style={styles.billingLinkContent}>
+          <Feather name="credit-card" size={18} color={colors.primary} />
+          <Text style={[styles.billingLinkText, { color: colors.foreground }]}>Plano e assinatura</Text>
+        </View>
+        <Feather name="chevron-right" size={18} color={colors.mutedForeground} />
+      </TouchableOpacity>
 
       <View style={styles.statsRow}>
         <StatCard
@@ -235,6 +247,18 @@ const styles = StyleSheet.create({
   revenueIcon: {
     opacity: 0.8,
   },
+  billingLink: {
+    height: 52,
+    borderWidth: 1,
+    borderRadius: 14,
+    paddingHorizontal: 16,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 24,
+  },
+  billingLinkContent: { flexDirection: 'row', alignItems: 'center', gap: 10 },
+  billingLinkText: { fontSize: 14, fontFamily: 'Inter_600SemiBold' },
   statsRow: {
     flexDirection: 'row',
     gap: 10,

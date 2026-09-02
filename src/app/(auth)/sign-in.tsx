@@ -149,6 +149,12 @@ export default function SignIn() {
           </Text>
         )}
 
+        <View style={styles.forgotPasswordRow}>
+          <Link href="/(auth)/forgot-password">
+            <Text style={[styles.link, { color: colors.primary }]}>Esqueci minha senha</Text>
+          </Link>
+        </View>
+
         <Pressable
           style={({ pressed }) => [
             styles.button,
@@ -306,6 +312,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     marginTop: 24,
+  },
+  forgotPasswordRow: {
+    alignItems: "flex-end",
+    marginTop: 10,
   },
   link: {
     fontSize: 14,
